@@ -42,7 +42,7 @@ void loop() {
   if(valor <= 272 && valor >= 268)
   {
     digitalWrite(8,HIGH);
-  
+  }
   if ( ! rfid.PICC_IsNewCardPresent())
     {
       nuid = "";
@@ -61,8 +61,8 @@ void loop() {
       nuidPICC[i] = rfid.uid.uidByte[i];
       nuid = nuid + String(nuidPICC[i]);
       digitalWrite(7,HIGH);
-    }
+      }
     }
     rfid.PICC_HaltA();
     rfid.PCD_StopCrypto1();
-}
+  }
